@@ -1,1 +1,1 @@
-# hamburger-menu
+# Vanilla JavaScript Projects
