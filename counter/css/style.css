@@ -1,0 +1,39 @@
+body{
+    background-color: gray;
+}
+
+#wrapper{
+    width:500px;
+    height:400px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+h1{
+    font-size:50px;
+}
+
+#counter{
+    font-size:170px;
+}
+
+button{
+    width:100px;
+    height:50px;
+    font-size: 20px;
+    background-color: blue;
+    color:white;
+    border:none;
+    margin:0 auto;
+    
+}
+
+#add:hover,#subtract:hover{
+    background-color:orange;
+}
+
+
