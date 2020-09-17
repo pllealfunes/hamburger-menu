@@ -1,0 +1,43 @@
+i{
+    float: right;
+    font-size: 40px;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.option{
+    margin: 30px;
+}
+
+#menu{
+    height: 100%; 
+    width: 300px;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    background-color: black; 
+    padding-top: 20px;
+    color: white;
+    display: none;
+}
+
+#exit{
+    margin: 15px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+ 
+    #menu{
+        width: 100%;
+    }
+
+    nav{
+      align-items: center;
+    }
+
+}  
