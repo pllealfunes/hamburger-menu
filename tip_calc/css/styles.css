@@ -1,0 +1,77 @@
+body{
+    background-color: #ffc04d;
+}
+
+#wrapper{
+    width:405px;
+    height:525px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 2%;
+    background-color: white;
+}
+
+select{
+   margin-bottom:30px;
+   font-size:20px;
+}
+
+button{
+    margin-bottom:30px;
+   font-size:20px;
+}
+
+input{
+    margin-bottom:30px;
+   font-size:22px; 
+   border:2px solid gray;
+   border-radius: 5px; 
+}
+
+#bill_amount{
+    margin-top: 5%;
+}
+
+
+label{
+    font-size: 25px;
+}
+
+button{
+    border:none;
+    border-radius: 10px;
+    background-color: #e66465;
+    color:white;
+    padding:5px;
+}
+
+#total{
+    margin-top: 20px;
+    font-size: 35px;
+}
+
+h1{
+    text-align: center;
+    background-color: #e66465;
+    margin-top: 0px;
+    height:50px;
+    color:white;
+    padding:15px;
+    font-size: 40px;
+}
+
+#split_bill{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5%;
+}
+
+
+  
+
+
+
