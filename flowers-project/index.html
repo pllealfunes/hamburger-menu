@@ -91,9 +91,9 @@
     </section>
 
     <section id="gallery">
-        <div class="container">
+        <div class="container py-5">
             <div class="row">
-                <div class="col text-center my-5">
+                <div class="col text-center my-2">
                     <h1 class="display-3 text-white">
                         <strong>Gallery</strong>
                     </h1>
@@ -177,7 +177,7 @@
                 <div class="col-sm-6 occassion-picture height-80">
                 </div>
                 <div class="col-sm-6 align-self-center">
-                    <h1 class="display-4 text-center"><strong>For Any Occassion</strong></h1>
+                    <h1 class="display-4 text-center my-5"><strong>For Any Occassion</strong></h1>
                     <p class="about-para my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, expedita
                         omnis. Fuga nulla minima aperiam amet nostrum animi facilis delectus quam laboriosam saepe ex,
                         illo dolorem unde velit itaque excepturi commodi. Sunt quo placeat vel consectetur eveniet,
@@ -191,27 +191,32 @@
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div>
-                    <h1 class="text-white">Contact Us</h1>
-                    <form>
-                        <div class="form-group">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name">
-                            </div>
-                            <label for="email1">Email address</label>
-                            <input type="email" class="form-control" id="email1" aria-describedby="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="comment">Comment</label>
-                            <textarea class="form-control" id="comment" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
-                    </form>
+    <section class="py-5" id="contact">
+        <div id="contact-container" class="container justify-content-center">
+            <div>
+                <div class="text-center">
+                    <h1 class="display-3 text-white">Contact Us</h1>
+                    <div class="title-underline bg-white"></div>
                 </div>
+            </div>
+            <div>
+                <form class="col-md-6">
+                    <div class="form-group my-3">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="email1">Email</label>
+                        <input type="email" class="form-control" id="email1" aria-describedby="email">
+                    </div>
+                    <div class="form-group my-3">
+                        <label for="comment">Comment</label>
+                        <textarea class="form-control" id="comment" rows="3"></textarea>
+                    </div>
+                    <div id="button-container">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>

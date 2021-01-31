@@ -12,7 +12,7 @@ nav > a, nav > li{
 }
 
 .height-80{
-    min-height: 70vh;
+    min-height: 80vh;
 }
 
 .title-underline{
@@ -45,3 +45,12 @@ nav > a, nav > li{
 .occassion-picture{
     background: url("../flowers-project/images/occassion-img6.jpg") center/cover no-repeat;
 }
+
+form{
+    margin: 0 auto;
+}
+
+#button-container{
+     margin: 0 auto;
+     text-align: center;
+ }
