@@ -28,11 +28,11 @@ a{
     }
 
 #intro{
-    background:url("../flowers-project/images/header-img6.jpg") center/cover no-repeat;
+    background:url("/images/header-img6.jpg") center/cover no-repeat;
 }
 
 .about-picture{
-    background:url("../flowers-project/images/about-img.jpg") center/cover no-repeat;
+    background:url("/images/about-img.jpg") center/cover no-repeat;
 }
 
 .about-para{
@@ -49,7 +49,7 @@ a{
 }
 
 .occassion-picture{
-    background: url("../flowers-project/images/occassion-img.jpg") center/cover no-repeat;
+    background: url("/images/occassion-img.jpg") center/cover no-repeat;
 }
 
 form{
