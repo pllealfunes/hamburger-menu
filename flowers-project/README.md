@@ -8,3 +8,4 @@ Hosted on Netlify: https://mimis-flowers.netlify.app/
 - Google Fonts
 - pexels.com
 - Boostrap Documentation
+- Boostrap 4 Tutorial + Project by Coding Addict
