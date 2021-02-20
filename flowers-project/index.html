@@ -16,52 +16,50 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg fixed-top bg-white">
+        <a id="logo" class="navbar-brand" href="#">MiMi's Flowers</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="fas fa-bars"></i></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse text-dark" id="navbarSupportedContent">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#occassion">Occassion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+            <!-- Links -->
+
+            <form class="form-inline my-2 my-lg-0">
+                <input id="search-bar" class="form-control mr-sm-2" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+
+            </form>
+        </div>
+        <!-- Collapsible content -->
+    </nav>
     <header id="header">
-        <nav class="navbar navbar-expand-lg fixed-top bg-white">
-
-            <!-- Navbar brand -->
-            <a id="logo" class="navbar-brand" href="#">MiMi's Flowers</a>
-
-            <!-- Collapse button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span><i class="fas fa-bars"></i></span>
-            </button>
-
-            <!-- Collapsible content -->
-            <div class="collapse navbar-collapse text-dark" id="basicExampleNav">
-
-                <!-- Links -->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#gallery">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#occassion">Occassion</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-                <!-- Links -->
-
-                <form class="form-inline mx-5">
-                    <input id="search-bar" class="form-control mr-sm-2" type="text" placeholder="Search"
-                        aria-label="Search">
-                    <button class="btn btn-outline-scondary my-2 my-sm-0" type="submit">Search</button>
-
-                </form>
-            </div>
-            <!-- Collapsible content -->
-        </nav>
         <div id="header-image">
             <h1 id="header-title" class="text-secondary text-uppercase font-weight-bold"><strong>Light Up The
                     Room</strong>
@@ -72,7 +70,6 @@
                 <button type="submit" class="btn btn-light btn-lg">Order</button>
             </div>
         </div>
-
     </header>
 
     <section id="about" class="bg-white">
@@ -80,8 +77,8 @@
             <div class="row">
                 <div class="col-sm-6 about-picture height-80">
                 </div>
-                <div class="col-sm-6 align-self-center">
-                    <h1 class="display-4 text-center"><strong>Who We Are</strong></h1>
+                <div class="col-sm-6 align-self-center height-80">
+                    <h1 class="display-4 text-center my-5"><strong>Who We Are</strong></h1>
                     <p class="about-para my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, expedita
                         omnis. Fuga nulla minima aperiam amet nostrum animi facilis delectus quam laboriosam saepe ex,
                         illo dolorem unde velit itaque excepturi commodi. Sunt quo placeat vel consectetur eveniet,
@@ -96,10 +93,10 @@
     </section>
 
     <section id="gallery">
-        <div class="container py-5">
+        <div class="container">
             <div class="row">
-                <div class="col text-center my-2">
-                    <h1 class="display-3 text-white">
+                <div class="col text-center">
+                    <h1 class="display-3 text-white my-5">
                         <strong>Gallery</strong>
                     </h1>
                     <div class="title-underline bg-white"></div>
@@ -178,10 +175,10 @@
 
     <section id="occassion" class="bg-white">
         <div class="container-fluid">
-            <div class="row">
+            <div class=" row">
                 <div class="col-sm-6 occassion-picture height-80">
                 </div>
-                <div class="col-sm-6 align-self-center">
+                <div class="col-sm-6 align-self-center height-80">
                     <h1 class="display-4 text-center my-5"><strong>For Any Occassion</strong></h1>
                     <p class="about-para my-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, expedita
                         omnis. Fuga nulla minima aperiam amet nostrum animi facilis delectus quam laboriosam saepe ex,
@@ -197,32 +194,33 @@
     </section>
 
     <section class="py-5" id="contact">
-        <div id="contact-container" class="container justify-content-center">
-            <div>
-                <div class="text-center">
+        <div id="contact-container" class="container">
+            <div class="row">
+                <div class="col text-center">
                     <h1 class="display-3 text-white">Contact Us</h1>
                     <div class="title-underline bg-white"></div>
                 </div>
             </div>
-            <div>
-                <form class="col-md-6">
-                    <div class="form-group my-5">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name">
-                    </div>
-                    <div class="form-group my-5">
-                        <label for="email1">Email</label>
-                        <input type="email" class="form-control" id="email1" aria-describedby="email">
-                    </div>
-                    <div class="form-group my-5">
-                        <label for="comment">Comment</label>
-                        <textarea class="form-control" id="comment" rows="3"></textarea>
-                    </div>
-                    <div id="button-container">
-                        <button type="submit" class="btn btn-light btn-lg">Submit</button>
-                    </div>
-                </form>
-            </div>
+        </div>
+        <div class="row">
+            <form id="contact-form" class="col-md-6">
+                <div class="form-group my-5">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group my-5">
+                    <label for="email1">Email</label>
+                    <input type="email" class="form-control" id="email1" aria-describedby="email">
+                </div>
+                <div class="form-group my-5">
+                    <label for="comment">Comment</label>
+                    <textarea class="form-control" id="comment" rows="3"></textarea>
+                </div>
+                <div id="button-container">
+                    <button type="submit" class="btn btn-light btn-lg">Submit</button>
+                </div>
+            </form>
+        </div>
         </div>
     </section>
 
