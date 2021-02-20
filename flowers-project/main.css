@@ -6,10 +6,15 @@ body,html,header,#header-image{
 #logo{
     font-size: 30px;
     font-family: 'Courgette', cursive;
+    color: #505050 !important;
 }
 
 a{
-    color: black !important;
+    color: #505050;
+}
+
+span{
+    display: block;
 }
 
 
@@ -35,12 +40,12 @@ a{
 
 #header-intro{
     margin-left: 5%;
-    width: 500px;
 }
 
 #header-intro > p{
     font-size: 25px;
     font-weight: bold;
+    color: #808080 !important;
 }
 
 #header-title{
@@ -58,9 +63,6 @@ a{
     font-size: 20px;
 }
 
-#order-button{
-    background-color: #990000; 
-}
 
 #gallery,#contact{
     background-color: #DCDCDC;
