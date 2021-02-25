@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fantastic List</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="center-content">
+            <h1>To Do List</h1>
+            <div id="currDate"></div>
+            <form action="">
+                <label for="newItem"></label>
+                <input id="newItem" type="text" required>
+                <button id="newBtn" type="button">Submit</button>
+                <button id="clear" type="button">Clear All</button>
+            </form>
+            <input id="allItems" type="radio" name="task">
+            <label for="task">All</label>
+            <input id="checkedItems" type="radio" name="task">
+            <label for="task">Complete</label>
+            <input id="uncheckedItems" type="radio" name="task">
+            <label for="task">Incomplete</label>
+        </div>
+        <ul id="itemList"></ul>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
