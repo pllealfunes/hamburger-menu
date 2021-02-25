@@ -1,0 +1,42 @@
+
+#wrapper{
+    width:400px;
+    margin: 0 auto;
+    border:10px solid pink;
+}
+
+input{
+  padding: 20px 5px;
+    font-size: 60px;
+    background: transparent;
+    border: none;
+    text-align: right;
+    height: 100px;
+    overflow: hidden;
+}
+
+#user_input{
+  display: flex;
+  align-items: center;
+}
+input:focus{
+  outline: none;
+}
+
+#symbols_container{
+    background-color: pink;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+button{  
+  background-color: #f1f1f1;
+  width: 50%;
+  padding: 30px;
+  margin: 5px;
+  font-size: 30px;
+  border: none;
+}
