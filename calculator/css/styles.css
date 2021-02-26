@@ -2,7 +2,8 @@
 #wrapper{
     width:400px;
     margin: 0 auto;
-    border:10px solid pink;
+    border:50px solid pink;
+    border-radius: 2%;
 }
 
 input{
