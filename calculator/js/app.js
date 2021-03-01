@@ -9,12 +9,12 @@ let equation;
 buttons.forEach(function (btn) {
     btn.addEventListener('click', function () {
         if (isNaN(Number(btn.innerText)) && operator === '') {
-            operator = btn.innerText;
+            operator += btn.innerText;
             input.value += operator;
-        } else if (firstNum === '' && Number(btn.innerText)) {
+        } else if (firstNum === '' || firstNum != '' && secondNum === '' && operator === '' && Number(btn.innerText)) {
             firstNum += Number(btn.innerText);
-            input.value += firstNum;
-        } else if (secondNum === '' && Number(btn.innerText)) {
+            input.value = firstNum;
+        } else if (secondNum === '' || secondNum != '' && Number(btn.innerText) && firstNum != '' && operator != '') {
             secondNum += Number(btn.innerText);
             input.value += secondNum;
         } else if (btn.innerText === '=' && firstNum != '' && secondNum != '' && operator != '') {
@@ -33,6 +33,10 @@ buttons.forEach(function (btn) {
             input.value = '';
             console.log('hi');
         }
+        console.log('The first number is: ' + firstNum);
+        console.log('The second number is: ' + secondNum);
+        console.log('The operator number is: ' + operator);
+        console.log('The equation is: ' + equation);
     });
 });
 
