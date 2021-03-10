@@ -8,16 +8,17 @@ let operator = '';
 let equation;
 buttons.forEach(function (btn) {
     btn.addEventListener('click', function () {
-        if (isNaN(Number(btn.innerText)) && operator === '') {
-            operator += btn.innerText;
-            input.value += operator;
-        } else if (firstNum === '' || firstNum != '' && secondNum === '' && operator === '' && Number(btn.innerText)) {
-            firstNum += Number(btn.innerText);
-            input.value = firstNum;
-        } else if (secondNum === '' || secondNum != '' && Number(btn.innerText) && firstNum != '' && operator != '') {
-            secondNum += Number(btn.innerText);
-            input.value += secondNum;
-        } else if (btn.innerText === '=' && firstNum != '' && secondNum != '' && operator != '') {
+        console.log(Number('20%'));
+        if (isNaN(Number(btn.value)) && operator === '') {
+            operator += btn.value;
+            //input.value += operator;
+        } else if (operator === '') {
+            firstNum += btn.value;
+            //input.value += firstNum;
+        } else if (firstNum != '' && operator != '' && Number(btn.value) || btn.value === '0') {
+            secondNum += btn.value;
+            //input.value += secondNum;
+        } else if (btn.value === '=' && firstNum != '' && secondNum != '') {
             findAnswer();
             secondNum = '';
             operator = '';
@@ -25,7 +26,7 @@ buttons.forEach(function (btn) {
             console.log('try again');
         }
 
-        if (btn.innerText === 'C' || btn.innerText === 'c') {
+        if (btn.value === 'C' || btn.value === 'c') {
             firstNum = '';
             secondNum = '';
             operator = '';
@@ -37,6 +38,7 @@ buttons.forEach(function (btn) {
         console.log('The second number is: ' + secondNum);
         console.log('The operator number is: ' + operator);
         console.log('The equation is: ' + equation);
+        console.log(firstNum);
     });
 });
 
