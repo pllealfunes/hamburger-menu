@@ -6,4 +6,3 @@ Working on creating a calculator with basic math functionalities (add, sbustract
 * Work on backspace button
 * Work on percent button
 * Work on decimal button
-* Do multiple operations in a row
