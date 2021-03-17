@@ -5,49 +5,39 @@ let input = document.querySelector('#userInput');
 let firstNum = '';
 let secondNum = '';
 let operator = '';
-let equation;
-let array = [];
+let total = '';
+
 buttons.forEach(function (btn) {
     btn.addEventListener('click', function () {
-        if (isNaN(Number(btn.value)) && operator == '' && btn.value != 'back') {
+        if (isNaN(Number(btn.value)) && operator == '' && btn.value) {
             operator += btn.value;
-            //input.value += operator;
-            //array.push(btn.value);
         } else if (Number(btn.value) && operator === '') {
             firstNum += btn.value;
-            //array.push(btn.value);
             input.value = firstNum;
         } else if (firstNum != '' && operator != '' && Number(btn.value) || btn.value === '0') {
             secondNum += btn.value;
             input.value = secondNum;
-            //array.push(btn.value);
         } else if (btn.value === '=' && firstNum != '' && secondNum != '') {
             findAnswer();
             secondNum = '';
             operator = '';
-        } else if (isNaN(Number(btn.value)) && operator != '' && btn.value != 'back') {
+        } else if (isNaN(Number(btn.value)) && operator != '') {
             findAnswer();
             secondNum = '';
             operator = btn.value
-            //array.push(btn.value);
         } else {
             console.log('try again');
-        }
-        if (btn.value === 'back') {
-            input.value = input.value.substr(0, input.length - 1);
         }
         if (btn.value === 'C' || btn.value === 'c') {
             firstNum = '';
             secondNum = '';
             operator = '';
-            equation = '';
             input.value = '';
-            console.log('hi');
         }
         console.log('The first number is: ' + firstNum);
         console.log('The second number is: ' + secondNum);
         console.log('The operator number is: ' + operator);
-        console.log('The equation is: ' + equation);
+        console.log('The equation is: ' + total);
         console.log(input.value);
     });
 });
@@ -55,38 +45,28 @@ buttons.forEach(function (btn) {
 function findAnswer() {
     switch (true) {
         case operator === '+':
-            equation = Number(firstNum) + Number(secondNum);
-            console.log(equation);
-            firstNum = equation;
-            input.value = equation;
-            console.log(equation);
+            total = Number(firstNum) + Number(secondNum);
+            firstNum = total;
+            input.value = total;
             break;
         case operator === '-':
-            equation = Number(firstNum) - Number(secondNum);
-            console.log(equation);
-            firstNum = equation;
-            input.value = equation;
-            console.log(equation);
+            total = Number(firstNum) - Number(secondNum);
+            firstNum = total;
+            input.value = total;
             break;
         case operator === 'x':
-            equation = Number(firstNum) * Number(secondNum);
-            console.log(equation);
-            firstNum = equation;
-            input.value = equation;
-            console.log(equation);
+            total = Number(firstNum) * Number(secondNum);
+            firstNum = total;
+            input.value = total;
             break;
         case operator === '/':
-            equation = Number(firstNum) / Number(secondNum);
-            console.log(equation);
-            firstNum = equation;
-            input.value = equation;
-            console.log(equation);
+            total = Number(firstNum) / Number(secondNum);
+            firstNum = total;
+            input.value = total;
             break;
         default:
-            console.log(equation);
-            equation === 0;
-            firstNum = equation;
-            input.value = equation;
-            console.log(equation);
+            total = 0;
+            firstNum = total;
+            input.value = total;
     }
 }
