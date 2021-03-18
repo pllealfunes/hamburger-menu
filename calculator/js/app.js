@@ -69,11 +69,9 @@ function findAnswer() {
             input.value = total;
             break;
         case operator === 'x':
-
             total = Number(firstNum) * Number(secondNum);
             firstNum = total;
             input.value = total;
-
             break;
         case operator === '/':
             total = Number(firstNum) / Number(secondNum);
