@@ -5,4 +5,3 @@ Working on creating a calculator with basic math functionalities (add, sbustract
 
 * Work on backspace button
 * Work on percent button
-* Do not allow multiple decimals

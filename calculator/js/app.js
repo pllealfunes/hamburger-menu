@@ -13,11 +13,25 @@ buttons.forEach(function (btn) {
         if (isNaN(Number(btn.value)) && operator == '' && btn.value != '.' && btn.value != '%' && btn.value != '=') {
             operator += btn.value;
         } else if (operator === '' && btn.value != '=') {
-            firstNum += btn.value;
-            input.value = firstNum;
+            if (!firstNum.includes('.')) {
+                firstNum += btn.value;
+                input.value = firstNum;
+            } else {
+                if (Number(btn.value)) {
+                    firstNum += btn.value;
+                    input.value = firstNum;
+                }
+            }
         } else if (firstNum != '' && operator != '' && Number(btn.value) || btn.value == '.' || btn.value == '%') {
-            secondNum += btn.value;
-            input.value = secondNum;
+            if (!secondNum.includes('.')) {
+                secondNum += btn.value;
+                input.value = secondNum;
+            } else {
+                if (Number(btn.value)) {
+                    secondNum += btn.value;
+                    input.value = secondNum;
+                }
+            }
         } else if (btn.value === '=' && firstNum != '' && secondNum != '') {
             findAnswer();
             secondNum = '';
