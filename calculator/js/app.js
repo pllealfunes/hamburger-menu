@@ -80,9 +80,13 @@ function findAnswer() {
             }
             break;
         case operator === '/':
-            total = Number(firstNum) / Number(secondNum);
-            firstNum = total;
-            input.value = total;
+            if (Number(secondNum) == 0) {
+                console.log("Cannot divide by zero!");
+            } else {
+                total = Number(firstNum) / Number(secondNum);
+                firstNum = total;
+                input.value = total;
+            }
             break;
         default:
             total = 0;
