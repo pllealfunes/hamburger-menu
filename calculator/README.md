@@ -4,4 +4,3 @@ Working on creating a calculator with basic math functionalities (add, sbustract
 ## To Do List
 
 * Work on backspace button
-* Work on percent button

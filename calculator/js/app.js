@@ -22,7 +22,7 @@ buttons.forEach(function (btn) {
                     input.value = firstNum;
                 }
             }
-        } else if (firstNum != '' && operator != '' && Number(btn.value) || btn.value == '.' || btn.value == '%') {
+        } else if (firstNum != '' && operator != '' && btn.value != '=') {
             if (!secondNum.includes('.')) {
                 secondNum += btn.value;
                 input.value = secondNum;
@@ -69,9 +69,19 @@ function findAnswer() {
             input.value = total;
             break;
         case operator === 'x':
-            total = Number(firstNum) * Number(secondNum);
-            firstNum = total;
-            input.value = total;
+            if (firstNum.includes('%')) {
+                total = (Number(firstNum.substring(0, firstNum.length - 1) / 100)) * Number(secondNum);
+                firstNum = total;
+                input.value = total;
+            } else if (secondNum.includes('%')) {
+                total = Number(firstNum) * (Number(secondNum.substring(0, secondNum.length - 1) / 100));
+                firstNum = total;
+                input.value = total;
+            } else {
+                total = Number(firstNum) * Number(secondNum);
+                firstNum = total;
+                input.value = total;
+            }
             break;
         case operator === '/':
             total = Number(firstNum) / Number(secondNum);
