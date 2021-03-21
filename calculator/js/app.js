@@ -17,20 +17,16 @@ buttons.forEach(function (btn) {
                 firstNum += btn.value;
                 input.value = firstNum;
             } else {
-                if (Number(btn.value)) {
-                    firstNum += btn.value;
-                    input.value = firstNum;
-                }
+                firstNum += btn.value;
+                input.value = firstNum;
             }
         } else if (firstNum != '' && operator != '' && btn.value != '=') {
             if (!secondNum.includes('.')) {
                 secondNum += btn.value;
                 input.value = secondNum;
             } else {
-                if (Number(btn.value)) {
-                    secondNum += btn.value;
-                    input.value = secondNum;
-                }
+                secondNum += btn.value;
+                input.value = secondNum;
             }
         } else if (btn.value === '=' && firstNum != '' && secondNum != '') {
             findAnswer();
