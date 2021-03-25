@@ -6,13 +6,14 @@ let firstNum = '';
 let secondNum = '';
 let operator = '';
 let total = '';
-let secOperator = '';
+let hint = document.querySelector('.hint');
 
 buttons.forEach(function (btn) {
     btn.addEventListener('click', function () {
         if (isNaN(Number(btn.value)) && operator == '' && btn.value != '.' && btn.value != '%' && btn.value != '=' && btn.value != 'back') {
             operator += btn.value;
-        } else if (operator === '' && btn.value != '=' && btn.value != 'back') {
+        } // Add decimal to firstNum only once
+        else if (operator === '' && btn.value != '=' && btn.value != 'back') {
             if (!firstNum.includes('.')) {
                 firstNum += btn.value;
                 input.value = firstNum;
@@ -20,7 +21,8 @@ buttons.forEach(function (btn) {
                 firstNum += btn.value;
                 input.value = firstNum;
             }
-        } else if (firstNum != '' && operator != '' && btn.value != '=' && btn.value != 'back') {
+        } //Add decimal to secondNum only once
+        else if (firstNum != '' && operator != '' && btn.value != '=' && btn.value != 'back') {
             if (!secondNum.includes('.')) {
                 secondNum += btn.value;
                 input.value = secondNum;
@@ -50,10 +52,20 @@ buttons.forEach(function (btn) {
                     input.value = operator;
                 }
             } else {
-                console.log('try again 1');
+                hint.style.display = 'block';
+                setTimeout(function () { hint.style.display = 'none' }, 2000);
+                firstNum = '';
+                secondNum = '';
+                operator = '';
+                input.value = '';
             }
         } else {
-            console.log('try again 2');
+            hint.style.display = 'block';
+            setTimeout(function () { hint.style.display = 'none' }, 2000);
+            firstNum = '';
+            secondNum = '';
+            operator = '';
+            input.value = '';
         }
         if (btn.value === 'C' || btn.value === 'c') {
             firstNum = '';
@@ -61,11 +73,6 @@ buttons.forEach(function (btn) {
             operator = '';
             input.value = '';
         }
-        console.log('The first number is: ' + firstNum);
-        console.log('The second number is: ' + secondNum);
-        console.log('The operator number is: ' + operator);
-        console.log('The equation is: ' + total);
-        console.log(input.value.length);
     });
 });
 
@@ -98,7 +105,11 @@ function findAnswer() {
             break;
         case operator === '/':
             if (Number(secondNum) == 0) {
-                console.log("Cannot divide by zero!");
+                hint.style.display = 'block';
+                setTimeout(function () { hint.style.display = 'none' }, 2000);
+                input.value = '';
+                firstNum = '';
+
             } else {
                 total = Number(firstNum) / Number(secondNum);
                 firstNum = total;

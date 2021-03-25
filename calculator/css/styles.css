@@ -41,3 +41,14 @@ button{
   font-size: 30px;
   border: none;
 }
+
+.hint{
+  width: 150px;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  background-color: pink;
+  border: 1px solid pink;
+  border-radius: 5%;
+  display: none;
+}

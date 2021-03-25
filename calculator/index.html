@@ -7,48 +7,48 @@
   <title>Calculator</title>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-<div id="wrapper">
-  <div id="flex-container">
-    <div id="user_input">
-      <label for="userInput"></label>
-      <input id="userInput" type="text" name="userInput" autocomplete="off">
-    </div>
-    <div id="symbols_container">
-      <div class="row first-row">
-        <button class="btn-operator clear-btn" value="C">C</button>
-        <button class="btn-operator" value="back">&#8592;</button>
-        <button class="btn-operator" value="%">%</button>
-        <button class="btn-operator" value="/">/</button>
+
+<body>
+  <div class="hint">Try Again</div>
+  <div id="wrapper">
+    <div id="flex-container">
+      <div id="user_input">
+        <label for="userInput"></label>
+        <input id="userInput" type="text" name="userInput" autocomplete="off">
       </div>
-      <div class="row">
-        <button class="btn-number" value="7">7</button>
-        <button class="btn-number" value="8">8</button>
-        <button class="btn-number" value="9">9</button>
-        <button class="btn-operator" value="x">x</button>
-      </div>
-      <div class="row">
-        <button class="btn-number" value="4">4</button>
-        <button class="btn-number" value="5">5</button>
-        <button class="btn-number" value="6">6</button>
-        <button class="btn-operator" value="-">-</button>
-      </div>
-      <div class="row">
-        <button class="btn-number" value="1">1</button>
-        <button class="btn-number" value="2">2</button>
-        <button class="btn-number" value="3">3</button>
-        <button class="btn-operator" value="+">+</button>
-      </div>
-      <div class="row">
-        <button class="btn-number zero-btn" value='0'>0</button>
-        <button class="btn-operator" value=".">.</button>
-        <button class="btn-operator equals-btn" value="=">=</button>
+      <div id="symbols_container">
+        <div class="row first-row">
+          <button class="btn-operator clear-btn" value="C">C</button>
+          <button class="btn-operator" value="back">&#8592;</button>
+          <button class="btn-operator" value="%">%</button>
+          <button class="btn-operator" value="/">/</button>
+        </div>
+        <div class="row">
+          <button class="btn-number" value="7">7</button>
+          <button class="btn-number" value="8">8</button>
+          <button class="btn-number" value="9">9</button>
+          <button class="btn-operator" value="x">x</button>
+        </div>
+        <div class="row">
+          <button class="btn-number" value="4">4</button>
+          <button class="btn-number" value="5">5</button>
+          <button class="btn-number" value="6">6</button>
+          <button class="btn-operator" value="-">-</button>
+        </div>
+        <div class="row">
+          <button class="btn-number" value="1">1</button>
+          <button class="btn-number" value="2">2</button>
+          <button class="btn-number" value="3">3</button>
+          <button class="btn-operator" value="+">+</button>
+        </div>
+        <div class="row">
+          <button class="btn-number zero-btn" value='0'>0</button>
+          <button class="btn-operator" value=".">.</button>
+          <button class="btn-operator equals-btn" value="=">=</button>
+        </div>
       </div>
     </div>
   </div>
-
-</div>
-
-<body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/app.js"></script>
 </body>
