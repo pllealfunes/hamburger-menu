@@ -10,9 +10,9 @@ let secOperator = '';
 
 buttons.forEach(function (btn) {
     btn.addEventListener('click', function () {
-        if (isNaN(Number(btn.value)) && operator == '' && btn.value != '.' && btn.value != '%' && btn.value != '=') {
+        if (isNaN(Number(btn.value)) && operator == '' && btn.value != '.' && btn.value != '%' && btn.value != '=' && btn.value != 'back') {
             operator += btn.value;
-        } else if (operator === '' && btn.value != '=') {
+        } else if (operator === '' && btn.value != '=' && btn.value != 'back') {
             if (!firstNum.includes('.')) {
                 firstNum += btn.value;
                 input.value = firstNum;
@@ -20,7 +20,7 @@ buttons.forEach(function (btn) {
                 firstNum += btn.value;
                 input.value = firstNum;
             }
-        } else if (firstNum != '' && operator != '' && btn.value != '=') {
+        } else if (firstNum != '' && operator != '' && btn.value != '=' && btn.value != 'back') {
             if (!secondNum.includes('.')) {
                 secondNum += btn.value;
                 input.value = secondNum;
@@ -32,10 +32,24 @@ buttons.forEach(function (btn) {
             findAnswer();
             secondNum = '';
             operator = '';
-        } else if (isNaN(Number(btn.value)) && operator != '' && btn.value != '.' && btn.value != '%') {
+        } else if (isNaN(Number(btn.value)) && operator != '' && btn.value != '.' && btn.value != '%' && btn.value != 'back') {
             findAnswer();
             secondNum = '';
             operator = btn.value
+        } else if (btn.value === 'back') {
+            if (firstNum.length != 0 && operator == '' && secondNum.length == 0) {
+                input.value = input.value.substring(0, input.value.length - 1);
+                firstNum = input.value;
+            } else if (firstNum.length != 0 && operator != '' && secondNum.length == 0) {
+                input.value = operator;
+                operator = '';
+                input.value = input.value.substring(0, input.value.length - 1);
+            } else if (firstNum.length != 0 && operator != '' && secondNum.length != 0) {
+                input.value = input.value.substring(0, input.value.length - 1);
+                secondNum = input.value;
+            } else {
+                console.log('try again');
+            }
         } else {
             console.log('try again');
         }
