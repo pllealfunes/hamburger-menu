@@ -37,21 +37,23 @@ buttons.forEach(function (btn) {
             secondNum = '';
             operator = btn.value
         } else if (btn.value === 'back') {
-            if (firstNum.length != 0 && operator == '' && secondNum.length == 0) {
+            if (firstNum.length > 0 && operator == '' && secondNum.length == 0) {
                 input.value = input.value.substring(0, input.value.length - 1);
                 firstNum = input.value;
-            } else if (firstNum.length != 0 && operator != '' && secondNum.length == 0) {
-                input.value = operator;
+            } else if (firstNum.length > 0 && operator != '' && secondNum.length == 0) {
                 operator = '';
-                input.value = input.value.substring(0, input.value.length - 1);
-            } else if (firstNum.length != 0 && operator != '' && secondNum.length != 0) {
+                input.value = firstNum;
+            } else if (firstNum.length > 0 && operator != '' && secondNum.length > 0) {
                 input.value = input.value.substring(0, input.value.length - 1);
                 secondNum = input.value;
+                if (secondNum.length == 0) {
+                    input.value = operator;
+                }
             } else {
-                console.log('try again');
+                console.log('try again 1');
             }
         } else {
-            console.log('try again');
+            console.log('try again 2');
         }
         if (btn.value === 'C' || btn.value === 'c') {
             firstNum = '';
@@ -63,6 +65,7 @@ buttons.forEach(function (btn) {
         console.log('The second number is: ' + secondNum);
         console.log('The operator number is: ' + operator);
         console.log('The equation is: ' + total);
+        console.log(input.value.length);
     });
 });
 
