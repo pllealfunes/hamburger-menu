@@ -13,24 +13,24 @@ buttons.forEach(function (btn) {
         if (isNaN(Number(btn.value)) && operator == '' && btn.value != '.' && btn.value != '%' && btn.value != '=' && btn.value != 'back') {
             operator += btn.value;
         } // Add decimal to firstNum only once
-        else if (operator === '' && btn.value != '=' && btn.value != 'back') {
-            if (!firstNum.includes('.')) {
-                firstNum += btn.value;
-                input.value = firstNum;
+        else if (operator === '' && btn.value != '=' && btn.value != 'back' && btn.classList != 'btn-operator') {
+            if (firstNum.includes('.') && btn.value == '.') {
+                btn.disabled = true;
             } else {
                 firstNum += btn.value;
                 input.value = firstNum;
             }
+            btn.disabled = false;
         } //Add decimal to secondNum only once
-        else if (firstNum != '' && operator != '' && btn.value != '=' && btn.value != 'back') {
-            if (!secondNum.includes('.')) {
-                secondNum += btn.value;
-                input.value = secondNum;
+        else if (firstNum != '' && operator != '' && btn.value != '=' && btn.value != 'back' && btn.classList != 'btn-operator') {
+            if (secondNum.includes('.') && btn.value == '.') {
+                btn.disabled = true;
             } else {
                 secondNum += btn.value;
                 input.value = secondNum;
             }
-        } else if (btn.value === '=' && firstNum != '' && secondNum != '') {
+            btn.disabled = false;
+        } else if (btn.value === '=' && firstNum != '' && secondNum != '' && operator != '') {
             findAnswer();
             secondNum = '';
             operator = '';
@@ -80,27 +80,39 @@ function findAnswer() {
     switch (true) {
         case operator === '+':
             total = Number(firstNum) + Number(secondNum);
-            firstNum = total;
-            input.value = total;
+            firstNum = total.toString();
+            input.value = total.toString();
             break;
         case operator === '-':
             total = Number(firstNum) - Number(secondNum);
-            firstNum = total;
+            firstNum = total.toString();
             input.value = total;
             break;
         case operator === 'x':
             if (firstNum.includes('%')) {
                 total = (Number(firstNum.substring(0, firstNum.length - 1) / 100)) * Number(secondNum);
-                firstNum = total;
-                input.value = total;
+                if (total.toString().includes('.')) {
+                    total.toFixed(2);
+                    firstNum = total.toString();
+                    input.value = total.toString();
+                } else {
+                    firstNum = total.toString();
+                    input.value = total.toString();
+                }
             } else if (secondNum.includes('%')) {
                 total = Number(firstNum) * (Number(secondNum.substring(0, secondNum.length - 1) / 100));
-                firstNum = total;
-                input.value = total;
+                if (total.toString().includes('.')) {
+                    total.toFixed(2);
+                    firstNum = total.toString();
+                    input.value = total.toString();
+                } else {
+                    firstNum = total.toString();
+                    input.value = total.toString();
+                }
             } else {
                 total = Number(firstNum) * Number(secondNum);
-                firstNum = total;
-                input.value = total;
+                firstNum = total.toString();
+                input.value = total.toString();
             }
             break;
         case operator === '/':
@@ -112,8 +124,14 @@ function findAnswer() {
 
             } else {
                 total = Number(firstNum) / Number(secondNum);
-                firstNum = total;
-                input.value = total;
+                if (total.toString().includes('.')) {
+                    Number(total).toFixed(2);
+                    firstNum = Number(total).toFixed(2);
+                    input.value = Number(total).toFixed(2);
+                } else {
+                    firstNum = total.toString();
+                    input.value = total.toString();
+                }
             }
             break;
         default:
