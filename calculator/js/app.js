@@ -6,6 +6,7 @@ let firstNum = '';
 let secondNum = '';
 let operator = '';
 let total = '';
+let prevAnswer = [];
 let hint = document.querySelector('.hint');
 
 buttons.forEach(function (btn) {
@@ -14,13 +15,26 @@ buttons.forEach(function (btn) {
             operator += btn.value;
         } // Add decimal to firstNum only once
         else if (operator === '' && btn.value != '=' && btn.value != 'back' && btn.classList != 'btn-operator') {
-            if (firstNum.includes('.') && btn.value == '.') {
-                btn.disabled = true;
+            if (firstNum == '') {
+                if (firstNum.includes('.') && btn.value == '.') {
+                    btn.disabled = true;
+                } else {
+                    firstNum += btn.value;
+                    input.value = firstNum;
+                }
+                btn.disabled = false;
             } else {
-                firstNum += btn.value;
-                input.value = firstNum;
+                firstNum = '';
+                if (firstNum == '') {
+                    if (firstNum.includes('.') && btn.value == '.') {
+                        btn.disabled = true;
+                    } else {
+                        firstNum += btn.value;
+                        input.value = firstNum;
+                    }
+                    btn.disabled = false;
+                }
             }
-            btn.disabled = false;
         } //Add decimal to secondNum only once
         else if (firstNum != '' && operator != '' && btn.value != '=' && btn.value != 'back' && btn.classList != 'btn-operator') {
             if (secondNum.includes('.') && btn.value == '.') {
@@ -34,10 +48,12 @@ buttons.forEach(function (btn) {
             findAnswer();
             secondNum = '';
             operator = '';
+            prevAnswer = total;
         } else if (isNaN(Number(btn.value)) && operator != '' && btn.value != '.' && btn.value != '%' && btn.value != 'back') {
             findAnswer();
             secondNum = '';
             operator = btn.value
+            console.log(firstNum);
         } else if (btn.value === 'back') {
             if (firstNum.length > 0 && operator == '' && secondNum.length == 0) {
                 input.value = input.value.substring(0, input.value.length - 1);
@@ -73,6 +89,10 @@ buttons.forEach(function (btn) {
             operator = '';
             input.value = '';
         }
+        console.log('The first number is: ' + firstNum);
+        console.log('The second number is: ' + secondNum);
+        console.log('The operator number is: ' + operator);
+        console.log('The equation is: ' + total);
     });
 });
 
@@ -85,7 +105,7 @@ function findAnswer() {
             break;
         case operator === '-':
             total = Number(firstNum) - Number(secondNum);
-            firstNum = total.toString();
+            prevAnswer = total.toString();
             input.value = total;
             break;
         case operator === 'x':
@@ -93,25 +113,25 @@ function findAnswer() {
                 total = (Number(firstNum.substring(0, firstNum.length - 1) / 100)) * Number(secondNum);
                 if (total.toString().includes('.')) {
                     total.toFixed(2);
-                    firstNum = total.toString();
+                    prevAnswer = total.toString();
                     input.value = total.toString();
                 } else {
-                    firstNum = total.toString();
+                    prevAnswer = total.toString();
                     input.value = total.toString();
                 }
             } else if (secondNum.includes('%')) {
                 total = Number(firstNum) * (Number(secondNum.substring(0, secondNum.length - 1) / 100));
                 if (total.toString().includes('.')) {
                     total.toFixed(2);
-                    firstNum = total.toString();
+                    prevAnswer = total.toString();
                     input.value = total.toString();
                 } else {
-                    firstNum = total.toString();
+                    prevAnswer = total.toString();
                     input.value = total.toString();
                 }
             } else {
                 total = Number(firstNum) * Number(secondNum);
-                firstNum = total.toString();
+                prevAnswer = total.toString();
                 input.value = total.toString();
             }
             break;
@@ -120,23 +140,20 @@ function findAnswer() {
                 hint.style.display = 'block';
                 setTimeout(function () { hint.style.display = 'none' }, 2000);
                 input.value = '';
-                firstNum = '';
-
             } else {
                 total = Number(firstNum) / Number(secondNum);
                 if (total.toString().includes('.')) {
                     Number(total).toFixed(2);
-                    firstNum = Number(total).toFixed(2);
+                    prevAnswer = Number(total).toFixed(2);
                     input.value = Number(total).toFixed(2);
                 } else {
-                    firstNum = total.toString();
+                    prevAnswer = total.toString();
                     input.value = total.toString();
                 }
             }
             break;
         default:
             total = 0;
-            firstNum = total;
             input.value = total;
     }
 }
