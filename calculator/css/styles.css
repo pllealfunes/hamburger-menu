@@ -1,9 +1,12 @@
-
+body{
+  background-color: #5A4FCF;
+}
 #wrapper{
-    width:400px;
+    width:380px;
     margin: 0 auto;
-    border:50px solid pink;
+    border:30px solid #002244;
     border-radius: 2%;
+    box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
 }
 
 input{
@@ -14,6 +17,8 @@ input{
     text-align: right;
     height: 100px;
     overflow: hidden;
+    background-color: black;
+    color: white;
 }
 
 #user_input{
@@ -25,21 +30,35 @@ input:focus{
 }
 
 #symbols_container{
-    background-color: pink;
+    background-color: #002244;
+    display: flex;
+  flex-direction: column;
 }
 
 .row{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
+
+.first-row{
+  margin-top: 20px;
+}
+
 
 button{  
   background-color: #f1f1f1;
-  width: 50%;
+  flex: 1 0 0;
   padding: 30px;
   margin: 5px;
   font-size: 30px;
   border: none;
+}
+
+.equals-btn{
+  flex:5 0 0;
+  background-color: #5A4FCF;
 }
 
 .hint{
@@ -47,8 +66,8 @@ button{
   font-size: 25px;
   color: white;
   text-align: center;
-  background-color: pink;
-  border: 1px solid pink;
+  background-color: #002244;
+  border: 1px solid #002244;
   border-radius: 5%;
   display: none;
 }

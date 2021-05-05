@@ -1,83 +1,114 @@
 "use strict"
 
-const buttons = document.querySelectorAll('button');
 let input = document.querySelector('#userInput');
+let operatorBtn = document.querySelectorAll('.btn-operator');
+let numberBtn = document.querySelectorAll('.btn-number');
+let otherBtn = document.querySelectorAll('.btn-other');
+let hint = document.querySelector('.hint');
 let firstNum = '';
 let secondNum = '';
 let operator = '';
 let total = '';
-let hint = document.querySelector('.hint');
 
-buttons.forEach(function (btn) {
+numberBtn.forEach(function (btn) {
     btn.addEventListener('click', function () {
-        if (isNaN(Number(btn.value)) && operator == '' && btn.value != '.' && btn.value != '%' && btn.value != '=' && btn.value != 'back') {
-            operator += btn.value;
-        } // Add decimal to firstNum only once
-        else if (operator === '' && btn.value != '=' && btn.value != 'back' && btn.classList != 'btn-operator') {
+        if (operator == '') {
+            firstNum += btn.value;
+            input.value = firstNum;
+            console.log(typeof firstNum);
+        }
+        else {
+            secondNum += btn.value;
+            input.value = secondNum;
+        }
+    });
+});
+
+operatorBtn.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        if (firstNum !== '' && operator == '') {
+            operator = btn.value;
+        } else if (total != '' && secondNum == '' && operator == '') {
+            firstNum = total;
+            operator = btn.value;
+        } else if (firstNum !== '' && secondNum != '' && operator != '') {
+            findAnswer();
+            firstNum = total;
+            secondNum = '';
+            operator = btn.value;
+        } else {
+            operator = '';
+        }
+    });
+});
+
+otherBtn.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        if (operator == '') {
             if (firstNum.includes('.') && btn.value == '.') {
                 btn.disabled = true;
+                firstNum += btn.value;
+            } else if (firstNum.includes('%') || firstNum.includes('.') && btn.value == '%') {
+                btn.disabled = true;
+                firstNum += btn.value;
             } else {
                 firstNum += btn.value;
                 input.value = firstNum;
             }
             btn.disabled = false;
         } //Add decimal to secondNum only once
-        else if (firstNum != '' && operator != '' && btn.value != '=' && btn.value != 'back' && btn.classList != 'btn-operator') {
+        else if (firstNum != '' && operator != '') {
             if (secondNum.includes('.') && btn.value == '.') {
                 btn.disabled = true;
+                secondNum += btn.value;
+            } else if (secondNum.includes('%') || secondNum.includes('.') && btn.value == '%') {
+                btn.disabled = true;
+                secondNum += btn.value;
             } else {
                 secondNum += btn.value;
                 input.value = secondNum;
             }
             btn.disabled = false;
-        } else if (btn.value === '=' && firstNum != '' && secondNum != '' && operator != '') {
-            findAnswer();
-            secondNum = '';
-            operator = '';
-        } else if (isNaN(Number(btn.value)) && operator != '' && btn.value != '.' && btn.value != '%' && btn.value != 'back') {
-            findAnswer();
-            secondNum = '';
-            operator = btn.value
-        } else if (btn.value === 'back') {
-            if (firstNum.length > 0 && operator == '' && secondNum.length == 0) {
-                input.value = input.value.substring(0, input.value.length - 1);
-                firstNum = input.value;
-            } else if (firstNum.length > 0 && operator != '' && secondNum.length == 0) {
-                operator = '';
-                input.value = firstNum;
-            } else if (firstNum.length > 0 && operator != '' && secondNum.length > 0) {
-                input.value = input.value.substring(0, input.value.length - 1);
-                secondNum = input.value;
-                if (secondNum.length == 0) {
-                    input.value = operator;
-                }
-            } else {
-                hint.style.display = 'block';
-                setTimeout(function () { hint.style.display = 'none' }, 2000);
-                firstNum = '';
-                secondNum = '';
-                operator = '';
-                input.value = '';
-            }
-        } else {
-            hint.style.display = 'block';
-            setTimeout(function () { hint.style.display = 'none' }, 2000);
-            firstNum = '';
-            secondNum = '';
-            operator = '';
-            input.value = '';
         }
-        if (btn.value === 'C' || btn.value === 'c') {
-            firstNum = '';
-            secondNum = '';
-            operator = '';
-            input.value = '';
-        }
-        console.log('The first number is: ' + firstNum);
-        console.log('The second number is: ' + secondNum);
-        console.log('The operator number is: ' + operator);
-        console.log('The equation is: ' + total);
     });
+});
+
+document.querySelector(".clear-btn").addEventListener("click", function () {
+    firstNum = '';
+    secondNum = '';
+    operator = '';
+    input.value = '';
+});
+
+document.querySelector(".btn-back").addEventListener("click", function () {
+    if (firstNum.length > 0 && operator == '' && secondNum.length == 0) {
+        input.value = input.value.substring(0, input.value.length - 1);
+        firstNum = input.value;
+    } else if (firstNum.length > 0 && operator != '' && secondNum.length == 0) {
+        operator = '';
+        input.value = firstNum;
+    } else if (firstNum.length > 0 && operator != '' && secondNum.length > 0) {
+        input.value = input.value.substring(0, input.value.length - 1);
+        secondNum = input.value;
+        console.log(secondNum);
+        if (secondNum.length == 0) {
+            input.value = operator;
+        }
+    } else {
+        hint.style.display = 'block';
+        setTimeout(function () { hint.style.display = 'none' }, 2000);
+        firstNum = '';
+        secondNum = '';
+        operator = '';
+        input.value = '';
+    }
+});
+
+document.querySelector(".equals-btn").addEventListener("click", function () {
+    findAnswer();
+    firstNum = '';
+    secondNum = '';
+    operator = '';
 });
 
 function findAnswer() {
@@ -93,7 +124,7 @@ function findAnswer() {
             input.value = total;
             break;
         case operator === 'x':
-            if (firstNum.includes('%')) {
+            if (firstNum.toString().indexOf('%') > -1) {
                 total = (Number(firstNum.substring(0, firstNum.length - 1) / 100)) * Number(secondNum);
                 if (total.toString().includes('.')) {
                     total.toFixed(2);
@@ -103,7 +134,7 @@ function findAnswer() {
                     firstNum = total.toString();
                     input.value = total.toString();
                 }
-            } else if (secondNum.includes('%')) {
+            } else if (secondNum.toString().indexOf('%') > -1) {
                 total = Number(firstNum) * (Number(secondNum.substring(0, secondNum.length - 1) / 100));
                 if (total.toString().includes('.')) {
                     total.toFixed(2);
