@@ -15,7 +15,6 @@ numberBtn.forEach(function (btn) {
         if (operator == '') {
             firstNum += btn.value;
             input.value = firstNum;
-            console.log(typeof firstNum);
         }
         else {
             secondNum += btn.value;
@@ -44,26 +43,23 @@ operatorBtn.forEach(function (btn) {
 
 otherBtn.forEach(function (btn) {
     btn.addEventListener('click', function () {
-        if (operator == '') {
-            if (firstNum.includes('.') && btn.value == '.') {
-                btn.disabled = true;
-                firstNum += btn.value;
-            } else if (firstNum.includes('%') || firstNum.includes('.') && btn.value == '%') {
-                btn.disabled = true;
-                firstNum += btn.value;
-            } else {
-                firstNum += btn.value;
-                input.value = firstNum;
-            }
-            btn.disabled = false;
-        } //Add decimal to secondNum only once
-        else if (firstNum != '' && operator != '') {
+        if (firstNum.includes('.') && btn.value == '.') {
+            btn.disabled = true;
+        } else if (firstNum.includes('%') && btn.value == '%') {
+            btn.disabled = true;
+        } else {
+            firstNum += btn.value;
+            input.value = firstNum;
+        }
+        btn.disabled = false;
+        //Add decimal to secondNum only once
+        if (firstNum != '' && operator != '') {
             if (secondNum.includes('.') && btn.value == '.') {
                 btn.disabled = true;
-                secondNum += btn.value;
-            } else if (secondNum.includes('%') || secondNum.includes('.') && btn.value == '%') {
+                //secondNum += btn.value;
+            } else if (secondNum.includes('%') && secondNum.includes('.') && btn.value == '%') {
                 btn.disabled = true;
-                secondNum += btn.value;
+                //secondNum += btn.value;
             } else {
                 secondNum += btn.value;
                 input.value = secondNum;
