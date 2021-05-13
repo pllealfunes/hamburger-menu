@@ -3,5 +3,7 @@
 I am working on a etch-a-sketch project! This idea comes from the Odin Project.
 
 ## To Do
-* Create grid
-* Change background color and keep color after mouse hovers
+* Create 16X16grid
+* Change background color on hover
+* Keep color after mouse moves away
+* Add ability to create different grid sizes
