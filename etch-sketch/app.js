@@ -14,6 +14,9 @@ function generateGrid(numDivs) {
         for (let i = 0; i < numDivs; i++) {
             let block = document.createElement('div');
             block.classList.add('block');
+            let height = 500 / parseInt(numDivs);
+            block.style.height = `${height}px`;
+            block.style.width = `${height}px`;
             column.appendChild(block);
         }
         document.querySelectorAll('.block').forEach(block => {
