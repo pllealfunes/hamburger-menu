@@ -21,7 +21,7 @@ function generateGrid(numDivs) {
         }
         document.querySelectorAll('.block').forEach(block => {
             block.addEventListener('mouseover', event => {
-                block.style.backgroundColor = "red";
+                block.style.backgroundColor = "#989898";
             })
         })
     }
@@ -30,6 +30,25 @@ function generateGrid(numDivs) {
 document.querySelector('#clear-board').addEventListener('click', event => {
     document.querySelectorAll('.block').forEach(block => {
         block.style.backgroundColor = "";
+        block.addEventListener('mouseover', event => {
+            block.style.backgroundColor = "#989898";
+        })
     })
 })
+
+function randomNumber(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+document.querySelector('#rainbow').addEventListener('click', event => {
+    document.querySelectorAll('.block').forEach(block => {
+        block.addEventListener('mouseover', event => {
+            block.style.backgroundColor = `rgb(${randomNumber(0, 250)}, ${randomNumber(0, 250)}, ${randomNumber(0, 250)})`;
+        })
+    })
+})
+
+
 

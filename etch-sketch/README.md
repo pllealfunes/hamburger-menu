@@ -8,7 +8,7 @@ I am working on a etch-a-sketch project! This idea comes from the Odin Project.
 * Keep color after mouse moves away ☑️
 * Add clear button ☑️
 * Add ability to create different grid sizes ☑️
-* Add rainbow option
+* Add rainbow option ☑️
 * Give fixed size to container ☑️
 * UI
 
