@@ -10,3 +10,9 @@
 h1{
     text-align: center;
 }
+
+.block{
+    border: 1px solid pink;
+    height: 30px;
+    width: 30px;
+}
