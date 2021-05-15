@@ -55,6 +55,3 @@ document.querySelector('#rainbow').addEventListener('click', event => {
         })
     })
 })
-
-
-
