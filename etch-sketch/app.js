@@ -5,6 +5,7 @@ generateGrid(16);
 document.querySelector('#new-grid').addEventListener('click', event => {
     document.querySelector('#container').innerHTML = '';
     generateGrid(document.querySelector('#block-number').value);
+    document.querySelector('#block-number').value = '';
 })
 
 function generateGrid(numDivs) {

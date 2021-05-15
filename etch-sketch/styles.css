@@ -1,23 +1,49 @@
 *{
     box-sizing: border-box;
 }
+
+body{
+    text-align: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color:#f0e3ca;
+}
+
 #container{
     display: flex;
     flex-direction:row;
-    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
     height: 500px;
     width: 500px;
-    margin: auto;
+    margin: 0 auto;
+    margin-top: 15px;
 }
+
 
 h1{
     text-align: center;
+    color:#a35709;
+    font-size: 50px;
 }
 
 .block{
     border: 1px solid black;
     width: 100%;
+}
+
+label{
+    font-size: 25px;
+    color:#a35709;
+}
+
+button{
+    border: none;
+    border-radius: 5%;
+    background-color: #a35709;
+    color:azure;
+    font-size: 15px;
+    padding: 5px;
 }
