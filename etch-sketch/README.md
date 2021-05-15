@@ -1,14 +1,4 @@
 # Etch-a-Sketch
 
-I am working on a etch-a-sketch project! This idea comes from the Odin Project.
-
-## To Do
-* Create 16X16grid ☑️
-* Change background color on hover ☑️
-* Keep color after mouse moves away ☑️
-* Add clear button ☑️
-* Add ability to create different grid sizes ☑️
-* Add rainbow option ☑️
-* Give fixed size to container ☑️
-* UI
+I made an Etch-a-Sketch using JS,CSS3, and HTML5. The default grid is 16x16. Users can change the grid size from any number between 2 and 64. The user also has the option to change the default color of grey to rainbow by clicking the rainbow button. If the user presses the clear button then the grid is cleared of all color and returns to the original default grid grey color.
 

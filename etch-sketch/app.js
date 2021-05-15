@@ -4,8 +4,12 @@ generateGrid(16);
 
 document.querySelector('#new-grid').addEventListener('click', event => {
     document.querySelector('#container').innerHTML = '';
-    generateGrid(document.querySelector('#block-number').value);
-    document.querySelector('#block-number').value = '';
+    if (document.querySelector('#grid-number').value >= 2 && document.querySelector('#grid-number').value <= 64) {
+        generateGrid(document.querySelector('#grid-number').value);
+    } else {
+        generateGrid(16);
+    }
+    document.querySelector('#grid-number').value = '';
 })
 
 function generateGrid(numDivs) {
@@ -34,6 +38,7 @@ document.querySelector('#clear-board').addEventListener('click', event => {
         block.addEventListener('mouseover', event => {
             block.style.backgroundColor = "#989898";
         })
+        block.style.backgroundColor = "#989898";
     })
 })
 
