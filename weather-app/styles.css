@@ -1,0 +1,84 @@
+body{
+    background-color: #fcb69f;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#output{
+    /*background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);*/
+    background-color: #ffecd2;
+   border: 1px solid linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+   height: 600px;
+   width: 500px;
+   margin: 0 auto;
+   border-radius: 15px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+#place{
+    font-size: 50px;
+}
+
+#temp{
+font-size: 45px;
+}
+
+#weather-image{
+    height: 120px;
+    width: 120px;
+}
+
+#weather-description{
+    font-size: 20px;
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+#details-container{
+    border: 1px solid #fcb69f;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    padding:10px
+}
+
+#temp-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding:5px
+}
+
+#temp-container > div, #details-container > div{
+margin: 5px;
+}
+
+#details-container > div{
+    border-right: 1px solid #ff0000;
+    padding-right: 5px;
+}
+
+#location{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    font-size: 25px;
+}
+
+#getWeather{
+    border: none;
+    background-color: #ffecd2;
+    color: #333332;
+    font-size: 15px;
+}
