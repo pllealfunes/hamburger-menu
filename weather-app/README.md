@@ -8,6 +8,8 @@ I'm working on a weather app using the OpenWeatherMap API
 * Log something to the console ☑️
 * Work with a Form/Input ☑️
 * Display info on page ☑️
-* Show F and C
-* Add weather picture?
-* UI
+* Convert numbers & round numbers ☑️
+* Add labels
+* Fix search -> center
+* Add weather picture ☑️
+* UI 💻
