@@ -9,6 +9,7 @@ I'm working on a weather app using the OpenWeatherMap API
 * Work with a Form/Input ☑️
 * Display info on page ☑️
 * Convert numbers & round numbers ☑️
+* Add button to switch from F -> C and back
 * Add labels
 * Fix search -> center
 * Add weather picture ☑️

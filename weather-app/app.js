@@ -1,5 +1,9 @@
 'use strict'
 
+document.querySelector("#inner-circle").addEventListener("click", () => {
+    //document.querySelector(".toggle-btn").classList.toggle('active');
+    console.log("hi");
+});
 
 //document.querySelector('#getWeather').addEventListener('click', getCity);
 /*function getCity() {
@@ -45,21 +49,21 @@ fetch(``, {
     .then((data) => {
         console.log(data);
         const info = {
-            city: data.city.name,
-            country: data.city.country,
-            temp: data.list[0].main.temp,
-            tempMax: data.list[0].main.temp_max,
-            tempMin: data.list[0].main.temp_min,
+            city: data.name,
+            country: data.sys.country,
+            temp: data.main.temp,
+            tempMax: data.main.temp_max,
+            tempMin: data.main.temp_min,
             precipitation: null,
-            humidity: data.list[0].main.humidity,
-            wind: data.list[0].wind.speed,
-            weather: data.list[0].weather[0].description,
-            icon: data.list[0].weather[0].icon
+            humidity: data.main.humidity,
+            wind: data.wind.speed,
+            weather: data.weather[0].description,
+            icon: data.weather[0].icon
         }
-        if (data.list[0].rain) {
-            info.precipitation = Math.round(data.list[0].rain[0]);
+        /*if (data.weather.main.rain) {
+            info.precipitation = Math.round(data.list[0].weather.main.rain);
             document.querySelector("#details-container") = `Precipitation: ${info.precipitation}%`;
-        }
+        }*/
 
         let celcius = Math.round((info.temp - 32) * .5556);
         let celciusHigh = Math.round(info.tempMax);
@@ -79,11 +83,11 @@ fetch(``, {
             </div>
             <div id="temp-container">
             <div id="temp-max">High: ${celciusHigh}&#176 F / ${celciuslow}&#176 C</div>
-            <div id="temp-max">High: ${fahrenheitHigh}&#176 F / ${fahrenheitLow}&#176 C</div>
+            <div id="temp-low">Low: ${fahrenheitLow}&#176 F / ${fahrenheitLow}&#176 C</div>
             </div>
             <div id="details-container">
-            <div id="humidity">Humidity: ${humidity}</div>
-        <div id="wind-speed">Wind: ${wind}</div>
+            <div id="humidity">Humidity: ${humidity}%</div>
+        <div id="wind-speed">Wind: ${wind} mph</div>
             </div >
         `;
         document.querySelector('#output').innerHTML += output;
