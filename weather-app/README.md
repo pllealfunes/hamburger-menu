@@ -17,4 +17,4 @@ I'm working on a weather app using the OpenWeatherMap API. The project is built 
 * Handle if numbers are entered
 * Way to make sure I'm getting right city? More specific?
 
-![alt text](./onload-image.png "Title")
+![Weather App Image](onload-image.png "Weather App Image")
