@@ -1,20 +1,13 @@
 # Weather App
-I'm working on a weather app using the OpenWeatherMap API. The project is built using HTML5, CSS3, JavaScript, and Fetch.
+A a weather app utilizing the OpenWeatherMap API. The project is built using HTML5, CSS3, JavaScript, and Fetch. The default temperature is Fahrenheit and miles er hour wind speed. Click on the toggle button to see temperature in Celcius and wind speed in meter per second.
 
-## ToDo
-* Look into Fetch ☑️
-* Get API Key ☑️
-* Read Docs ☑️
-* Log something to the console ☑️
-* Work with a Form/Input ☑️
-* Display info on page ☑️
-* Convert numbers & round numbers ☑️
-* Add button to switch from F -> C and back ☑️
-* Add labels ☑️
-* Fix search & toggle button -> center ☑️
-* Add weather picture ☑️
-* Add default location onload ☑️
-* Handle if numbers are entered
-* Way to make sure I'm getting right city? More specific?
+To use the app you need an api key from OoenWeatherMap.com under the free subscription. Enter the following in line 10 in the app.js file: api.openweathermap.org/data/2.5/weather?q=${location[0]},${location[1]}&units=imperial&appid={Your API key}
 
-![Weather App Image](onload-image.png "Weather App Image")
+The app only accepts city name and country code. The API is not 100% accurate therefore cities with the same name within the same country will not properly display.
+
+## Sources
+* Font Awesome
+* OpenWeatherMap: https://openweathermap.org/
+* Toggle button: Codingflag https://www.youtube.com/watch?v=ZZoA3MjgASQ
+
+![Weather App](./images/onload-image.png)

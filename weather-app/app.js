@@ -1,4 +1,5 @@
 'use strict'
+
 window.addEventListener('load', () => {
     getCity();
 });
@@ -12,7 +13,6 @@ function getCity() {
     })
         .then(response => response.json())
         .then((data) => {
-            console.log(data);
             const info = {
                 city: data.name,
                 country: data.sys.country,
@@ -35,7 +35,6 @@ function getCity() {
             let humidity = Math.round(info.humidity);
             let wind = Math.round(info.wind);
             let windSec = Math.round((info.wind * 0.44704));
-            console.log(info);
             let output = `
         <div id="main">
             <h1 id="place">${info.city}, ${info.country}</h1>
