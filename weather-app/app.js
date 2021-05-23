@@ -13,6 +13,7 @@ function getCity() {
     })
         .then(response => response.json())
         .then((data) => {
+            document.querySelector("#error-message").style.display = "none";
             const info = {
                 city: data.name,
                 country: data.sys.country,
@@ -57,6 +58,14 @@ function getCity() {
         `;
             document.querySelector('#output').innerHTML = output;
             document.querySelector('#getWeather').addEventListener('click', getCity);
+            document.querySelector('#location').value = "";
+        })
+        .catch((error) => {
+            if (error) {
+                document.querySelector("#error-message").style.display = "block";
+            } else {
+                document.querySelector("#error-message").style.display = "none";
+            }
         });
 }
 
