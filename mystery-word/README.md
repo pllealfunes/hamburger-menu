@@ -12,7 +12,7 @@ This game will be made to practice Vue 3. The goal of the game is for the comput
 
 ## To Do
 * Array of words & hints -> theme?
-* Get random word with hint
+* Get random word with hint ✔️
 * Have underscores equal the amount of letters in word
 * When a letter is guessed right replace underscore with letter
 * Guess wrong letter player gets a strike -> show strike count
