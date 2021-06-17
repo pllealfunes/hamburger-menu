@@ -10,10 +10,14 @@
     <title>Mystery Word</title>
 </head>
 <div id="app">
+
+
+    <div>{{ hint }}</div>
     <label for="guess">Guess:</label>
     <input type="text" id="guess" v-model="guess">
     <button id="userGuess" @click="userGuess">Guess</button>
     <div id="dashes">{{ randomWord }}</div>
+
 </div>
 
 <body>

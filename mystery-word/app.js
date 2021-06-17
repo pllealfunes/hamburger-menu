@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
+            //play: false,
             guess: '',
             words: [
                 ['apple', 'Sometimes red, sometimes delicious'],
@@ -10,17 +11,32 @@ const app = Vue.createApp({
             ],
             guesses: [],
             mysteryWord: '',
-            space: ''
+            hint: '',
+            space: '',
         }
     },
+    mounted() {
+        //this.play = true;
+        this.num = this.words[Math.floor((Math.random() * this.words.length))];
+        this.mysteryWord = this.num[0];
+        this.hint = this.num[1];
+        console.log(this.mysteryWord);
+    },
     methods: {
+
         userGuess() {
-            if (this.mysteryWord[0].includes(this.guess)) {
-                this.space.indexOf(this.mysteryWord[0].indexOf(this.guess) + 1).replace(' - ', this.guess)
-                console.log(this.mysteryWord[0].indexOf(this.guess));
+            if (this.mysteryWord.includes(this.guess)) {
+                let splitWord = this.space.split("");
+                console.log(splitWord)
+                let index = this.mysteryWord.indexOf(this.guess)
+                console.log(splitWord[index + 1] = this.guess)
+                //this.space = splitWord[index + 1] = this.guess
+
+                //console.log(splitWord)
+                //this.space = splitWord.join()
+                console.log(this.mysteryWord.indexOf(this.guess));
                 console.log("includes")
-                console.log(this.mysteryWord[0].indexOf(this.guess))
-                console.log(this.space.length)
+
             } else {
                 console.log("does not include");
             }
@@ -29,11 +45,11 @@ const app = Vue.createApp({
     },
     computed: {
         randomWord() {
-            this.mysteryWord = this.words[Math.floor((Math.random() * this.words.length))];
-            for (let number = 0; number < this.mysteryWord[0].length; number++) {
+            //this.mysteryWord = this.words[Math.floor((Math.random() * this.words.length))];
+            //this.hint = this.mysteryWord[1]
+            for (let number = 0; number < this.mysteryWord.length; number++) {
                 this.space += ' _ '
             }
-            console.log(this.mysteryWord);
             return this.space
         }
     }
