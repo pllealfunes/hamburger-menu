@@ -13,6 +13,9 @@ const app = Vue.createApp({
             mysteryWord: '',
             hint: '',
             space: '',
+            strike: 0,
+            result: null,
+            message: ''
         }
     },
     mounted() {
@@ -37,24 +40,21 @@ const app = Vue.createApp({
                     index = mysteryArray.indexOf(this.guess, index + 1)
                 }
                 indexes.forEach(element => splitWord[element] = this.guess);
-                console.log(`here are the indexes ${indexes}`)
-
-                console.log(splitWord)
-                //let index = this.mysteryWord.indexOf(this.guess)
-                //console.log(splitWord[index] = this.guess)
-                //splitWord[index] = this.guess
-                //splitWord.pop()
-                console.log(splitWord)
-                //splitWord.splice(index + 1, 1)
                 this.space = splitWord.join("")
-                //this.space = splitWord.join()
-                console.log(this.mysteryWord.indexOf(this.guess));
-                console.log("includes")
-
+                console.log(this.space)
             } else {
-                console.log("does not include");
+                this.strike++
+                if (this.strike === 6) {
+                    this.result = false
+                    this.message = "Game Over"
+                }
             }
             console.log(this.guess)
+            if (this.space === this.mysteryWord) {
+                this.result = true
+                this.message = "You win"
+                console.log("you win")
+            }
         }
     },
     computed: {

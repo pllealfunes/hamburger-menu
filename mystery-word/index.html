@@ -10,13 +10,13 @@
     <title>Mystery Word</title>
 </head>
 <div id="app">
-
-
     <div>{{ hint }}</div>
+    <div>Strike: {{ strike }}</div>
     <label for="guess">Guess:</label>
     <input type="text" id="guess" v-model="guess">
     <button id="userGuess" @click="userGuess">Guess</button>
     <div id="dashes">{{ space }}</div>
+    <div v-bind:class="{result: win}">{{ message }}</div>
 
 </div>
 

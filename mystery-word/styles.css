@@ -1,3 +1,11 @@
 #dashes{
     letter-spacing: .2rem;
 }
+
+.win{
+    color: gold;
+}
+
+.lose{
+    color: red;
+}

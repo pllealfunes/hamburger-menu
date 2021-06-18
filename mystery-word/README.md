@@ -1,8 +1,8 @@
-# Mystery Word Game
+# Mystery Word Game 🕹
 
 This game will be made to practice Vue 3. The goal of the game is for the computer to pick a random word from an array and the user will have to guess the word. 
 
-## Requirements
+## Requirements 💫
 * Keep track of a) a running score and b) results of each round of the game played
 * Provide the option to reset the score and results
 * Use at least 1 component
@@ -10,11 +10,16 @@ This game will be made to practice Vue 3. The goal of the game is for the comput
 * There must not be any warnings or errors in the inspector console.
 
 
-## To Do
-* Array of words & hints -> theme?
+## To Do 📌
+* Array of words & hints
+    * Theme?
+    * Show hints ✔️
 * Get random word with hint ✔️
-* Have underscores equal the amount of letters in word
-* When a letter is guessed right replace underscore with letter
-* Guess wrong letter player gets a strike -> show strike count
-* Keep track of wrong guesses -> display on page?
-* 6 wrong guesses -> lose game
+* Have underscores equal the amount of letters in word ✔️
+* When a letter is guessed right replace underscore with letter ✔️
+* Guess wrong letter player gets a strike
+    * show strike count ✔️
+    * 6 wrong guesses -> lose game ✔️
+    * Show message
+* Keep track of wrong guesses -> display on page? error message?
+* Play again button after win or loss
