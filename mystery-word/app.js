@@ -29,10 +29,20 @@ const app = Vue.createApp({
         userGuess() {
             if (this.mysteryWord.includes(this.guess)) {
                 let splitWord = this.space.split("");
+                let mysteryArray = this.mysteryWord.split("")
+                let indexes = []
+                let index = mysteryArray.indexOf(this.guess)
+                while (index != -1) {
+                    indexes.push(index)
+                    index = mysteryArray.indexOf(this.guess, index + 1)
+                }
+                indexes.forEach(element => splitWord[element] = this.guess);
+                console.log(`here are the indexes ${indexes}`)
+
                 console.log(splitWord)
-                let index = this.mysteryWord.indexOf(this.guess)
-                console.log(splitWord[index] = this.guess)
-                splitWord[index] = this.guess
+                //let index = this.mysteryWord.indexOf(this.guess)
+                //console.log(splitWord[index] = this.guess)
+                //splitWord[index] = this.guess
                 //splitWord.pop()
                 console.log(splitWord)
                 //splitWord.splice(index + 1, 1)
