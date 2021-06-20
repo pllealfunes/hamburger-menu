@@ -1,7 +1,6 @@
 const app = Vue.createApp({
     data() {
         return {
-            //play: false,
             guess: '',
             words: [
                 ['apple', 'Sometimes red, sometimes delicious'],
@@ -15,18 +14,13 @@ const app = Vue.createApp({
             space: '',
             strike: 0,
             result: null,
-            message: ''
+            gameOver: false,
+            feedback: false,
+            correct: false,
         }
     },
     mounted() {
-        //this.play = true;
-        this.num = this.words[Math.floor((Math.random() * this.words.length))];
-        this.mysteryWord = this.num[0];
-        this.hint = this.num[1];
-        for (let number = 0; number < this.mysteryWord.length; number++) {
-            this.space += '_'
-        }
-        console.log(this.mysteryWord);
+        this.loadGame()
     },
     methods: {
         userGuess() {
@@ -41,20 +35,38 @@ const app = Vue.createApp({
                 }
                 indexes.forEach(element => splitWord[element] = this.guess);
                 this.space = splitWord.join("")
-                console.log(this.space)
             } else {
                 this.strike++
-                if (this.strike === 6) {
-                    this.result = false
-                    this.message = "Game Over"
-                }
+                this.gameLose()
             }
-            console.log(this.guess)
+            this.gameWin()
+        },
+        gameWin() {
             if (this.space === this.mysteryWord) {
                 this.result = true
-                this.message = "You win"
-                console.log("you win")
+                this.gameOver = true;
+                this.correct = true
             }
+        },
+        gameLose() {
+            if (this.strike === 6) {
+                this.result = true
+                this.gameOver = true;
+                this.correct = false
+            }
+        },
+        loadGame() {
+            this.space = ''
+            this.num = this.words[Math.floor((Math.random() * this.words.length))];
+            this.mysteryWord = this.num[0];
+            this.hint = this.num[1];
+            for (let number = 0; number < this.mysteryWord.length; number++) {
+                this.space += '_'
+            }
+            this.result = null
+            this.strike = 0
+            this.guess = ''
+            this.gameOver = false
         }
     },
     computed: {
