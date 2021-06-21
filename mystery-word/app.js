@@ -9,6 +9,7 @@ const app = Vue.createApp({
                 ['football', 'Play with your hands or feet, depending on your location']
             ],
             guesses: [],
+            guessesList: '',
             mysteryWord: '',
             hint: '',
             space: '',
@@ -20,7 +21,7 @@ const app = Vue.createApp({
             playerScore: 0,
             compScore: 0,
             rounds: [],
-            round: 1
+            round: 1,
         }
     },
     mounted() {
@@ -29,6 +30,7 @@ const app = Vue.createApp({
     },
     methods: {
         userGuess() {
+            this.guesses.push(this.guess)
             if (this.mysteryWord.includes(this.guess)) {
                 let splitWord = this.space.split("");
                 let mysteryArray = this.mysteryWord.split("")
@@ -44,6 +46,7 @@ const app = Vue.createApp({
                 this.strike++
             }
             this.checkGame()
+            this.guessesList = this.guesses.join(" ");
         },
         checkGame() {
             if (this.space === this.mysteryWord) {
@@ -91,7 +94,10 @@ const app = Vue.createApp({
         }
     },
     computed: {
-
+        /*splitGuesses() {
+            // take the instructions and split them after every comma to create a list
+            return this.guesses.split(",");
+        },*/
     }
 
 });

@@ -3,7 +3,7 @@
 This game will be made to practice Vue 3. The goal of the game is for the computer to pick a random word from an array and the user will have to guess the word. 
 
 ## Requirements 💫
-* Keep track of a) a running score and b) results of each round of the game played
+* Keep track of a) a running score and b) results of each round of the game played ✔️
 * Provide the option to reset the score and results ✔️
 * Use at least 1 component ✔️
 * There should be some aspect of dynamic styling (e.g. winning message in green, losing message in red) and this should be accomplished using class binding. ✔️

@@ -23,9 +23,12 @@
             <div v-if='correct'>You got it! Nice work. <button @click='loadGame'>Play again</button></div>
             <div v-else>Sorry, the word was {{ this.mysteryWord }} <button @click='loadGame'>Play again</button></div>
         </div>
+        <div id="guessesContainer" v-if=" guessesList != '' ">
+            <div>{{ guessesList }}</div>
+        </div>
         <div id="scoreBoard" @click='resetGame'>
             <button>Reset Game</button>
-            <round-detail v-for='round in rounds' v-bind:key='round.number' :reset-game='resetGame' :correct='correct'
+            <round-detail v-for='round in rounds' v-bind:key='round.number' :reset-game='resetGame'
                 :number='round.number'>
                 <template v-slot:player-score> Player Score: {{ round.playerScore }} </template>
                 <template v-slot:comp-score> Computer Score: {{ round.compScore }} </template>

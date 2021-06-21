@@ -14,3 +14,12 @@
     background-color: #d8d8d8;
     cursor: not-allowed;
 }
+
+#guessesContainer{
+    border: 1px solid purple;
+    width: 200px;
+}
+
+#guessesList{
+    list-style: none;
+}
