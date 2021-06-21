@@ -21,5 +21,6 @@ This game will be made to practice Vue 3. The goal of the game is for the comput
     * show strike count ✔️
     * 6 wrong guesses -> lose game ✔️
     * Show message ✔️
-* Keep track of guesses -> display on page? error message?
-* Play again button after win or loss ✔️
+* Keep track of guesses
+    * display on page ✔️
+* Play again button after win or lose ✔️

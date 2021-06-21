@@ -45,6 +45,7 @@ const app = Vue.createApp({
             } else {
                 this.strike++
             }
+            this.guess = ''
             this.checkGame()
             this.guessesList = this.guesses.join(" ");
         },
@@ -84,6 +85,8 @@ const app = Vue.createApp({
             this.strike = 0
             this.guess = ''
             this.gameOver = false
+            this.guesses = []
+            this.guessesList = ''
         },
         resetGame() {
             this.loadGame()

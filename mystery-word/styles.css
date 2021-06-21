@@ -1,5 +1,65 @@
+body{
+    background-color: blue;
+}
+
+[v-cloak] {
+    display: none
+}
+
+h1{
+    text-align: center;
+    font-size: 60px;
+}
+
+#historyHeading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#gameContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#gameBoard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 3px solid white;
+    padding: 5px;
+    width: 500px;
+    height: 600px;
+    margin: 10px;
+    font-size: 35px;
+}
+
+
+#scoreBoard{
+    border: 3px solid white;
+    padding: 5px;
+    font-size: 35px;
+    width: 500px;
+    margin: 10px;
+}
+
 #dashes{
     letter-spacing: .2rem;
+    margin: 10px;
+}
+
+#guess{
+    height: 15px;
+}
+
+#userGuess{
+    margin: 5px;
+    font-size: 15px;
 }
 
 .win{
