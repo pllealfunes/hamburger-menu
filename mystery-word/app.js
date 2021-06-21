@@ -17,10 +17,15 @@ const app = Vue.createApp({
             gameOver: false,
             feedback: false,
             correct: false,
+            playerScore: 0,
+            compScore: 0,
+            rounds: [],
+            round: 1
         }
     },
     mounted() {
         this.loadGame()
+        console.log(this.mysteryWord)
     },
     methods: {
         userGuess() {
@@ -37,22 +42,31 @@ const app = Vue.createApp({
                 this.space = splitWord.join("")
             } else {
                 this.strike++
-                this.gameLose()
             }
-            this.gameWin()
+            this.checkGame()
         },
-        gameWin() {
+        checkGame() {
             if (this.space === this.mysteryWord) {
                 this.result = true
                 this.gameOver = true;
                 this.correct = true
+                this.playerScore++
+                this.rounds.push({
+                    number: this.round++,
+                    playerScore: this.playerScore,
+                    compScore: this.compScore
+                })
             }
-        },
-        gameLose() {
             if (this.strike === 6) {
                 this.result = true
                 this.gameOver = true;
                 this.correct = false
+                this.compScore++
+                this.rounds.push({
+                    number: this.round++,
+                    playerScore: this.playerScore,
+                    compScore: this.compScore
+                })
             }
         },
         loadGame() {
@@ -67,10 +81,42 @@ const app = Vue.createApp({
             this.strike = 0
             this.guess = ''
             this.gameOver = false
+        },
+        resetGame() {
+            this.loadGame()
+            this.rounds = [];
+            this.round = 1
+            this.playerScore = 0
+            this.compScore = 0
         }
     },
     computed: {
 
     }
 
-}).mount('#app');
+});
+
+app.component('round-detail', {
+    data() {
+        return {
+        }
+    },
+    props: {
+        number: {
+            type: Number,
+            default: 0
+        },
+        resetGame: {
+            type: Function
+        },
+    },
+    template: `<div>
+    <ul>
+        <li>Round #: {{ number }}</li>
+        <li><slot name="player-score"></slot></li>
+        <li><slot name="comp-score"></slot></li>
+    </ul>
+</div>`
+})
+
+app.mount('#app');

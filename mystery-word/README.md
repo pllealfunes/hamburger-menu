@@ -4,10 +4,10 @@ This game will be made to practice Vue 3. The goal of the game is for the comput
 
 ## Requirements 💫
 * Keep track of a) a running score and b) results of each round of the game played
-* Provide the option to reset the score and results
-* Use at least 1 component
+* Provide the option to reset the score and results ✔️
+* Use at least 1 component ✔️
 * There should be some aspect of dynamic styling (e.g. winning message in green, losing message in red) and this should be accomplished using class binding. ✔️
-* There must not be any warnings or errors in the inspector console.
+* There must not be any warnings or errors in the inspector console
 
 
 ## To Do 📌

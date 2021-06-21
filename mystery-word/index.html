@@ -9,20 +9,31 @@
     <script src="https://unpkg.com/vue@next"></script>
     <title>Mystery Word</title>
 </head>
-<div id="app">
-    <div>{{ hint }}</div>
-    <div>Strike: {{ strike }}</div>
-    <label for="guess">Guess:</label>
-    <input type="text" id="guess" v-model="guess">
-    <button id="userGuess" @click="userGuess" :disabled="gameOver" :class="{ disabledButton : gameOver}">Guess</button>
-    <div id="dashes">{{ space }}</div>
-    <div v-if='result' class='feedback' :class="{ win : correct, lose: !correct }">
-        <div v-if='correct'>You got it! Nice work. <button @click='loadGame'>Play again</button></div>
-        <div v-else>Sorry, the word was {{ this.mysteryWord }} <button @click='loadGame'>Play again</button></div>
-    </div>
-</div>
 
 <body>
+    <div id="app">
+        <div>{{ hint }}</div>
+        <div>Strike: {{ strike }}</div>
+        <label for="guess">Guess:</label>
+        <input type="text" id="guess" minlength="1" maxlength="1" v-model="guess">
+        <button id="userGuess" @click="userGuess" :disabled="gameOver"
+            :class="{ disabledButton : gameOver}">Guess</button>
+        <div id="dashes">{{ space }}</div>
+        <div v-if='result' class='feedback' :class="{ win : correct, lose: !correct }">
+            <div v-if='correct'>You got it! Nice work. <button @click='loadGame'>Play again</button></div>
+            <div v-else>Sorry, the word was {{ this.mysteryWord }} <button @click='loadGame'>Play again</button></div>
+        </div>
+        <div id="scoreBoard" @click='resetGame'>
+            <button>Reset Game</button>
+            <round-detail v-for='round in rounds' v-bind:key='round.number' :reset-game='resetGame' :correct='correct'
+                :number='round.number'>
+                <template v-slot:player-score> Player Score: {{ round.playerScore }} </template>
+                <template v-slot:comp-score> Computer Score: {{ round.compScore }} </template>
+            </round-detail>
+        </div>
+    </div>
+
+
     <script src="/app.js"></script>
 </body>
 
