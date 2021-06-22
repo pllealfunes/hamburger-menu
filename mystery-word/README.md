@@ -1,6 +1,6 @@
-# Mystery Word Game 🕹
+# Hangman Game 🕹
 
-This game will be made to practice Vue 3. The goal of the game is for the computer to pick a random word from an array and the user will have to guess the word. 
+This game will be made to practice Vue 3. The goal of the game is for the computer to pick a random word from an array and the user will have to guess the word. If the user guesses wrong 6 times then the player will lose the game. The player will be able to see a list of guesses already made. They will also be able to see a round history showing the player's score and the computer's score.
 
 ## Requirements 💫
 * Keep track of a) a running score and b) results of each round of the game played ✔️
@@ -12,7 +12,7 @@ This game will be made to practice Vue 3. The goal of the game is for the comput
 
 ## To Do 📌
 * Array of words & hints
-    * Theme?
+    * Theme -> words from crossword puzzle in newspaper
     * Show hints ✔️
 * Get random word with hint ✔️
 * Have underscores equal the amount of letters in word ✔️
@@ -24,3 +24,5 @@ This game will be made to practice Vue 3. The goal of the game is for the comput
 * Keep track of guesses
     * display on page ✔️
 * Play again button after win or lose ✔️
+* Make it pretty!
+* Netlify
