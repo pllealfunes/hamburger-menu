@@ -12,7 +12,7 @@ This game will be made to practice Vue 3. The goal of the game is for the comput
 
 ## To Do 📌
 * Array of words & hints
-    * Theme -> words from crossword puzzle in newspaper
+    * Theme -> words from crossword puzzle in newspaper ✔️
     * Show hints ✔️
 * Get random word with hint ✔️
 * Have underscores equal the amount of letters in word ✔️
@@ -23,6 +23,7 @@ This game will be made to practice Vue 3. The goal of the game is for the comput
     * Show message ✔️
 * Keep track of guesses
     * display on page ✔️
+    * check for capital or lowercase
 * Play again button after win or lose ✔️
 * Make it pretty!
 * Netlify

@@ -33,12 +33,12 @@
                     <div>{{ guessesList }}</div>
                 </div>
             </div>
-            <div id="scoreBoard" @click='resetGame'>
+            <div id="scoreBoard">
                 <div id="historyHeading">
                     <h3>History</h3>
-                    <button id="resetBtn">Reset Game</button>
+                    <button id="resetBtn" @click='resetGame'>Reset Game</button>
                 </div>
-                <round-detail v-for='round in rounds' v-bind:key='round.number' :reset-game='resetGame'
+                <round-detail id="score" v-for='round in rounds' v-bind:key='round.number' :reset-game='resetGame'
                     :number='round.number'>
                     <template v-slot:player-score> Player Score: {{ round.playerScore }} </template>
                     <template v-slot:comp-score> Computer Score: {{ round.compScore }} </template>

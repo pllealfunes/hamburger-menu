@@ -3,10 +3,17 @@ const app = Vue.createApp({
         return {
             guess: '',
             words: [
-                ['apple', 'Sometimes red, sometimes delicious'],
-                ['washington', 'Rushmore’s left edge'],
-                ['pumpkin', 'Halloween’s favorite fruit'],
-                ['football', 'Play with your hands or feet, depending on your location']
+                ['apple', 'Mac maker'],
+                ['obediance', "Dog trainer's goal"],
+                ['sassed', 'Talked back'],
+                ['prune', 'Trim a tree'],
+                ['spices', 'Cinnamon and nutmeg'],
+                ['lacerated', "Lanced"],
+                ['ages', 'Years and years'],
+                ['nape', 'Part of the neck'],
+                ['moderate', 'Not extreme'],
+                ['arcs', 'Curved lines'],
+                ['vim', 'Robust energy']
             ],
             guesses: [],
             guessesList: '',

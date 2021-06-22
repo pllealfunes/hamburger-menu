@@ -21,8 +21,9 @@ h1{
 
 #gameContainer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #gameBoard{
@@ -31,20 +32,20 @@ h1{
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 3px solid white;
     padding: 5px;
-    width: 500px;
-    height: 600px;
     margin: 10px;
     font-size: 35px;
 }
 
 
 #scoreBoard{
-    border: 3px solid white;
     padding: 5px;
     font-size: 35px;
-    width: 500px;
+    margin: 10px;
+}
+
+#score{
+    float: left;
     margin: 10px;
 }
 
