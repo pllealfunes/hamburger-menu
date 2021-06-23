@@ -37,7 +37,8 @@ const app = Vue.createApp({
     },
     methods: {
         userGuess() {
-            this.guesses.push(this.guess)
+            this.guess = this.guess.toLowerCase()
+            this.checkRepeats()
             if (this.mysteryWord.includes(this.guess)) {
                 let splitWord = this.space.split("");
                 let mysteryArray = this.mysteryWord.split("")
@@ -55,6 +56,11 @@ const app = Vue.createApp({
             this.guess = ''
             this.checkGame()
             this.guessesList = this.guesses.join(" ");
+        },
+        checkRepeats() {
+            if (!this.guesses.includes(this.guess)) {
+                this.guesses.push(this.guess)
+            }
         },
         checkGame() {
             if (this.space === this.mysteryWord) {
@@ -82,7 +88,7 @@ const app = Vue.createApp({
         },
         loadGame() {
             this.space = ''
-            this.num = this.words[Math.floor((Math.random() * this.words.length))];
+            this.num = this.words[Math.floor((Math.random() * this.words.length))]
             this.mysteryWord = this.num[0];
             this.hint = this.num[1];
             for (let number = 0; number < this.mysteryWord.length; number++) {
@@ -97,19 +103,12 @@ const app = Vue.createApp({
         },
         resetGame() {
             this.loadGame()
-            this.rounds = [];
+            this.rounds = []
             this.round = 1
             this.playerScore = 0
             this.compScore = 0
         }
     },
-    computed: {
-        /*splitGuesses() {
-            // take the instructions and split them after every comma to create a list
-            return this.guesses.split(",");
-        },*/
-    }
-
 });
 
 app.component('round-detail', {

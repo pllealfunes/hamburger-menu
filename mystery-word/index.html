@@ -18,28 +18,31 @@
                 <div id="hintContainer"> Hint: {{ hint }}</div>
                 <div id="strikeContainer">Strike: {{ strike }}</div>
                 <div class="input-group">
-                    <label for="guess">Guess: </label>
-                    <input type="text" id="guess" minlength="1" maxlength="1" v-model="guess">
-                    <button id="userGuess" @click="userGuess" :disabled="gameOver"
+                    <label for="guess"></label>
+                    <input type="text" id="guess" minlength="1" maxlength="1" v-model.trim="guess">
+                    <button id="guessBtn" @click="userGuess" :disabled="gameOver"
                         :class="{ disabledButton : gameOver}">Guess</button>
                 </div>
                 <div id="dashes">{{ space }}</div>
-                <div v-if='result' class='feedback' :class="{ win : correct, lose: !correct }">
-                    <div v-if='correct'>You got it! Nice work. <button @click='loadGame'>Play again</button></div>
-                    <div v-else>Sorry, the word was {{ this.mysteryWord }} <button @click='loadGame'>Play again</button>
+                <div v-if="result" class="feedback" :class="{ win : correct, lose: !correct }">
+                    <div v-if="correct">You got it! Nice work. <button @click="loadGame">Play again</button></div>
+                    <div v-else>Sorry, the word was {{ this.mysteryWord }} <button @click="loadGame"
+                            class="againBtn">Play
+                            again</button>
                     </div>
                 </div>
                 <div id="guessesContainer" v-if=" guessesList != '' ">
+                    Guesses
                     <div>{{ guessesList }}</div>
                 </div>
             </div>
             <div id="scoreBoard">
                 <div id="historyHeading">
                     <h3>History</h3>
-                    <button id="resetBtn" @click='resetGame'>Reset Game</button>
+                    <button id="resetBtn" @click="resetGame">Reset Game</button>
                 </div>
-                <round-detail id="score" v-for='round in rounds' v-bind:key='round.number' :reset-game='resetGame'
-                    :number='round.number'>
+                <round-detail id="score" v-for="round in rounds" v-bind:key="round.number" :reset-game="resetGame"
+                    :number="round.number">
                     <template v-slot:player-score> Player Score: {{ round.playerScore }} </template>
                     <template v-slot:comp-score> Computer Score: {{ round.compScore }} </template>
                 </round-detail>
