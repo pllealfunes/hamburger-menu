@@ -33,7 +33,6 @@ const app = Vue.createApp({
     },
     mounted() {
         this.loadGame()
-        console.log(this.mysteryWord)
     },
     methods: {
         userGuess() {
